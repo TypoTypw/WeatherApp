@@ -12,8 +12,8 @@ class HomeScreen extends StatelessWidget {
   var data;
 
   getCurrentWeather() async {
-    // var position = await getDeviceLocation();
-    data = await weather.getWeatherData('-26.2', '28.08');
+    var position = await getDeviceLocation();
+    data = await weather.getWeatherData(position.latitude, position.longitude);
     return data;
   }
 
